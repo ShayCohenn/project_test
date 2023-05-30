@@ -38,6 +38,10 @@ def check_loan_status():
 # Schedule the job to run every 2 seconds
 scheduler.add_job(check_loan_status, 'interval', seconds=2)
 
+@app.route('/')
+def home():
+    return 'test'
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
